@@ -66,6 +66,8 @@ to the next section!"#));
     assistant.set_page_title(&page2, "page2 title");
     assistant.set_page_complete(&page2, true);
 
+    assistant.set_forward_page_func(|current_page| (current_page + 1) % 2);
+
     assistant.connect_delete_event(|_, _| {
         gtk::main_quit();
         Inhibit(false)
