@@ -131,6 +131,8 @@ gdk-pixbuf-sys = { git = "https://github.com/EPashkin/rust-gnome-sys" }
 gdk-sys = { git = "https://github.com/EPashkin/rust-gnome-sys" }
 pango-sys = { git = "https://github.com/EPashkin/rust-gnome-sys" }
 pangocairo-sys = { git = "https://github.com/EPashkin/rust-gnome-sys" }
+atk-sys = { git = "https://github.com/EPashkin/rust-gnome-sys" }
+gtk-sys = { git = "https://github.com/EPashkin/rust-gnome-sys" }
 
 [patch."https://github.com/gtk-rs/glib"]
 glib = { git = "https://github.com/EPashkin/glib" }
