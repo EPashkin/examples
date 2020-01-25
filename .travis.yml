@@ -2,9 +2,9 @@ dist: xenial
 language: rust
 os: osx
 rust:
-- nightly
-- beta
-- 1.39.0 # stable
+#- nightly
+#- beta
+#- 1.39.0 # stable
 - stable
 addons:
   apt:
