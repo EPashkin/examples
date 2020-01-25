@@ -25,8 +25,11 @@ fn build_ui(application: &gtk::Application) {
     window.add(&button);
 
     let info = gio::DesktopAppInfo::new("com.github.gtk-rs.examples.basic");
+    drop(info);
     let plug = gtk::Plug::new(0);
+    drop(plug);
     let socket = gtk::Socket::new();
+    drop(socket);
 
     window.show_all();
 }
