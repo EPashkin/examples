@@ -32,8 +32,7 @@ if [ -n "$BUNDLE" ]; then
 	curl -LO "https://github.com/EPashkin/gtk-bootstrap/releases/download/$BUNDLE/deps.txz"
 	tar xf deps.txz
 	cd "$WD"
-echo $(pkg-config --variable pc_path pkg-config)
-#	export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig":$PKG_CONFIG_PATH
+#	export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig":$PKG_CONFIG_PATH:$(pkg-config --variable pc_path pkg-config)
 fi
 
 PKG_CONFIG_ALLOW_CROSS=1 cargo check $OTHER_TARGET --features "$FEATURES" --jobs 1 "$@"

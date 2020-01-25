@@ -24,6 +24,12 @@ fn build_ui(application: &gtk::Application) {
 
     window.add(&button);
 
+
+let info = gio::DesktopAppInfo::new();
+let plug = gtk::Plug::new(0);
+let socket = gtk::Socket::new();
+    
+
     window.show_all();
 }
 
