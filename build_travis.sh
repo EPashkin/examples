@@ -35,4 +35,8 @@ if [ -n "$BUNDLE" ] && [ "$TRAVIS_OS_NAME" != "osx" ]; then
 	export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig":$PKG_CONFIG_PATH:$(pkg-config --variable pc_path pkg-config)
 fi
 
-PKG_CONFIG_ALLOW_CROSS=1 cargo check $OTHER_TARGET --features "$FEATURES" --jobs 1 "$@"
+if [ -n "$OTHER_TARGET" ]; then
+  PKG_CONFIG_ALLOW_CROSS=1 cargo check $OTHER_TARGET --features "$FEATURES" --jobs 1 "$@"
+else
+  cargo build --features "$FEATURES" --jobs 1 "$@"
+fi
